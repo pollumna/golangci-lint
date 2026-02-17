@@ -68,6 +68,7 @@ import (
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/ireturn"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/lll"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/loggercheck"
+	"github.com/golangci/golangci-lint/v2/pkg/golinters/loglint"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/maintidx"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/makezero"
 	"github.com/golangci/golangci-lint/v2/pkg/golinters/mirror"
@@ -730,6 +731,11 @@ func (LinterBuilder) Build(cfg *config.Config) ([]*linter.Config, error) {
 			WithSince("v1.53.0").
 			WithLoadForGoAnalysis().
 			WithURL("https://github.com/ykadowak/zerologlint"),
+
+		linter.NewConfig(loglint.New()).
+			WithSince("v2.10.0").
+			WithLoadForGoAnalysis().
+			WithURL("https://github.com/pollumna/loglint"),
 
 		// nolintlint must be last because it looks at the results of all the previous linters for unused nolint directives
 		linter.NewConfig(nolintlint.New(&cfg.Linters.Settings.NoLintLint)).

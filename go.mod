@@ -103,6 +103,7 @@ require (
 	github.com/nishanths/predeclared v0.2.2
 	github.com/nunnatsa/ginkgolinter v0.23.0
 	github.com/pelletier/go-toml/v2 v2.2.4
+	github.com/pollumna/loglint v0.0.0-20260214210626-07789665a2f5
 	github.com/quasilyte/go-ruleguard/dsl v0.3.23
 	github.com/raeperd/recvcheck v0.2.0
 	github.com/rogpeppe/go-internal v1.14.1
